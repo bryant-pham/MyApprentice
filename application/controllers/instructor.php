@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Instructor controller
+*
+* This controller contains all the actions instructors may perform.
+*/
 class Instructor extends CI_Controller {
 
 	public function __construct() {

@@ -1,5 +1,9 @@
 <?php
-
+/**
+* Instructor model
+*
+* This class contains functions used to perform instructor actions.
+*/
 class Instructor_model extends CI_Model {
 
 	public function __construct() {
