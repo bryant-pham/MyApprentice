@@ -1,9 +1,10 @@
 <?php
 /**
-* Instructor model
+* Instructor Model
 *
-* This class contains functions used to perform instructor actions.
+* This class contains the functions used to perform instructor actions
 */
+
 class Instructor_model extends CI_Model {
 
 	public function __construct() {
@@ -26,7 +27,7 @@ class Instructor_model extends CI_Model {
 					'schedule_date' => $date,
 					'start_time' => $start_time,
 					'end_time' => $end_time,
-					'ins_id' => 1 //TODO: change this hardcoded value later
+					'ins_id' => 1 //TODO: change this hard coded value later
 				);
 				if( !( $this->db->insert( 'hours', $data ) ) ) {
 					die();
@@ -40,7 +41,7 @@ class Instructor_model extends CI_Model {
 		$query = $this->db->query( 'SELECT hr_id, schedule_date, start_time, end_time
 									FROM hours
 									WHERE ins_id = 1
-									ORDER BY schedule_date asc' ); //TODO: change this hardcoded ins_id value later
+									ORDER BY schedule_date ASC' ); //TODO: change this hard coded ins_id value later
 		return $query;
 	}
 
@@ -50,7 +51,7 @@ class Instructor_model extends CI_Model {
 		$this->db->join( 'hours', 'instructor.ins_id = hours.ins_id' );
 		$this->db->join( 'bookings', 'hours.hr_id = bookings.hr_id' );
 		$this->db->join( 'student', 'bookings.stu_id = student.stu_id' );
-		$this->db->where( 'instructor.ins_id', 1 ); //TODO: change this hardcoded value later
+		$this->db->where( 'instructor.ins_id', 1 ); //TODO: change this hard coded value later
 
 		$query = $this->db->get();
 		return $query;

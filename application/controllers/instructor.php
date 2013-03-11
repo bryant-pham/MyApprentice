@@ -1,9 +1,10 @@
 <?php
 /**
-* Instructor controller
+* Instructor Controller
 *
-* This controller contains all the actions instructors may perform.
+* This is controller contains all the actions instructors may perform.
 */
+
 class Instructor extends CI_Controller {
 
 	public function __construct() {
@@ -11,8 +12,14 @@ class Instructor extends CI_Controller {
 		$this->load->model( 'Instructor_model' );
 	}
 
-	public function index() {
-		$this->load->view( 'instructorhome' );
+	public function index( $page = null ) {
+		if( $page != null ) {
+			$data[ 'heading' ] = (string) $page;
+			$this->load->view( 'header', $data );
+			$this->load->view( (string) $page  );
+			$this->load->view( 'footer' );
+		}
+		else $this->load->view( 'instructorhome' );
 	} 
 
 	public function postHours() {
@@ -31,7 +38,6 @@ class Instructor extends CI_Controller {
 		$this->load->view( 'header', $data );
 		$this->load->view( 'viewhours', $data );
 		$this->load->view( 'footer' );
-		
 	}
 
 	public function viewBooks() {

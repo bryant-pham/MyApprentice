@@ -10,20 +10,17 @@
 		<div data-role="page" id="page1">
 			<div data-theme="a" data-role="header">
 		        <h3>
-		            Instructor Main
+		            Student Main
 		        </h3>
   		  	</div>
             <div data-role="content">
                 <a id="edit_profile" data-role="button" data-theme="b" href="http://localhost/index.php/instructor/index/editprofile">
                     Edit Profile
                 </a>
-                <a id="post_hours" data-role="button" data-theme="b" href="http://localhost/index.php/instructor/index/posthours">
-                    Post Hours
+                <a id="post_hours" data-role="button" data-theme="b" href="http://localhost/index.php/student/index/instructorsearch">
+                    Instructor Search
                 </a>
-                <a id="view_hours" data-role="button" data-theme="b" href="http://localhost/index.php/instructor/viewHours">
-                    View Posted Hours
-                </a>
-                <a id="view_bookings" data-role="button" data-theme="b" href="http://localhost/index.php/instructor/viewBooks">
+                <a id="view_bookings" data-role="button" data-theme="b" href="http://localhost/index.php/student/viewBooks">
                     View Appointments
                 </a>
 
