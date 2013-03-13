@@ -20,7 +20,8 @@ class Student_model extends CI_Model {
 		$query = $this->db->query( 'SELECT hr_id, schedule_date, start_time, end_time
 									FROM hours
 									WHERE ins_id = ' . $ins_id .
-								   ' ORDER BY schedule_date ASC' );
+								  ' AND booked = "false"
+								    ORDER BY schedule_date ASC' );
 		return $query;
 	}
 
@@ -30,7 +31,7 @@ class Student_model extends CI_Model {
 		//TODO: change this hardcoded stu_id
 		//FIX: Check for insert errors later
 	}
-	
+
 	public function fetchBooks() {
 		$query = $this->db->query( 'SELECT instructor.f_name, instructor.f_name, instructor.l_name, instructor.email, instructor.phone, schedule_date, start_time, end_time
 									FROM instructor, hours, bookings, student

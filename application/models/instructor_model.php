@@ -27,11 +27,12 @@ class Instructor_model extends CI_Model {
 					'schedule_date' => $date,
 					'start_time' => $start_time,
 					'end_time' => $end_time,
-					'ins_id' => 1 //TODO: change this hard coded value later
+					'ins_id' => 1, //TODO: change this hard coded value later
+					'booked' => 0
 				);
 				if( !( $this->db->insert( 'hours', $data ) ) ) {
 					die();
-				} //FIX: This does not correctly catch for a successful insert
+				} //FIX: This does not correctly catch for an unsuccessful insert
 			}
 		}
 		return TRUE;
@@ -41,19 +42,19 @@ class Instructor_model extends CI_Model {
 		$query = $this->db->query( 'SELECT hr_id, schedule_date, start_time, end_time
 									FROM hours
 									WHERE ins_id = 1
+									AND booked = 0
 									ORDER BY schedule_date ASC' ); //TODO: change this hard coded ins_id value later
 		return $query;
 	}
 
 	public function fetchBooks() {
-		$this->db->select( 'student.f_name, student.l_name, student.email, student.phone, schedule_date, start_time, end_time' );
-		$this->db->from( 'instructor' );
-		$this->db->join( 'hours', 'instructor.ins_id = hours.ins_id' );
-		$this->db->join( 'bookings', 'hours.hr_id = bookings.hr_id' );
-		$this->db->join( 'student', 'bookings.stu_id = student.stu_id' );
-		$this->db->where( 'instructor.ins_id', 1 ); //TODO: change this hard coded value later
-
-		$query = $this->db->get();
+		$query = $this->db->query( 'SELECT student.f_name, student.l_name, student.email, student.phone, schedule_date, start_time, end_time
+							FROM instructor, hours, bookings, student
+							WHERE instructor.ins_id = hours.ins_id
+							AND hours.hr_id = bookings.hr_id
+							AND bookings.stu_id = student.stu_id
+							AND instructor.ins_id = 1
+							ORDER BY schedule_date ASC' ); //TODO: change hardcoded value
 		return $query;
 	}
 }
