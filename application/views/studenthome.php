@@ -17,7 +17,7 @@
                 <a id="edit_profile" data-role="button" data-theme="b" href="http://localhost/index.php/instructor/index/editprofile">
                     Edit Profile
                 </a>
-                <a id="post_hours" data-role="button" data-theme="b" href="http://localhost/index.php/student/index/instructorsearch">
+                <a id="instructor_search" data-role="button" data-theme="b" href="http://localhost/index.php/student/index/instructorsearch">
                     Instructor Search
                 </a>
                 <a id="view_bookings" data-role="button" data-theme="b" href="http://localhost/index.php/student/viewBooks">

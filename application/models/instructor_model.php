@@ -31,7 +31,7 @@ class Instructor_model extends CI_Model {
 				);
 				if( !( $this->db->insert( 'hours', $data ) ) ) {
 					die();
-				}
+				} //FIX: This does not correctly catch for a successful insert
 			}
 		}
 		return TRUE;

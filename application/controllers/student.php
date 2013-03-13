@@ -30,8 +30,24 @@ class Student extends CI_Controller {
 		$data[ 'heading' ] = "Instructor Availability Times";
 		$query = $this->Student_model->fetchHours( $ins_id );
 		$data[ 'query' ] = $query->result_array();
+		$this->load->view( 'studentviewhours', $data );
+
+	}
+
+	public function book( $hr_id ) {
+		$data[ 'heading' ] = "Appointment Booking Confirmation";
+		$this->Student_model->bookHour( $hr_id );
+		$this->load->view( 'header', $data );			
+		$this->load->view( 'success' );
+		$this->load->view( 'footer' );
+	}
+
+	public function viewBooks() {
+		$data[ 'heading'] = "Scheduled Appointments";
+		$query = $this->Student_model->fetchBooks();
+		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'header', $data );
-		$this->load->view( 'viewhours', $data );
+		$this->load->view( 'viewbooks', $data );
 		$this->load->view( 'footer' );
 	}
 }
