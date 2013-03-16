@@ -22,7 +22,7 @@ class Student extends CI_Controller {
 		$query = $this->Student_model->searchInstructor();
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'student_header', $data );
-		$this->load->view( 'viewinstructors', $data );
+		$this->load->view( 'view_instructors', $data );
 		$this->load->view( 'footer' );
 	}
 

@@ -25,8 +25,8 @@ class Instructor extends CI_Controller {
 	public function postHours() {
 		$data[ 'heading' ] = "Schedule Posting Confirmation";
 		if( $this->Instructor_model->setHours() ) {
-			$this->load->view( 'instructor_header', $data )
-;			$this->load->view( 'success' );
+			$this->load->view( 'instructor_header', $data );			
+			$this->load->view( 'success' );
 			$this->load->view( 'footer' );
 		} 
 	}

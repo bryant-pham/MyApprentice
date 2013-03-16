@@ -14,10 +14,10 @@
 			<div style=" text-align:center">
 				<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 			</div>
-			<a data-role="button" href="http://localhost/index.php/student" class="ui-btn-left">
-              	Home
-          	</a>
-			<h3>
-				<?php echo $heading; ?>
-			</h3>
+			<h3>Unbook Confirmation</h3>
 		</div>
+		<div data-role="content" align="center">
+			SUCCESSFULLY UNBOOKED
+		</div>
+	</body>
+</html>
