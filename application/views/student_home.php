@@ -10,20 +10,23 @@
 	</head>
 
 	<body>
-		<div data-role="page" id="page1">
+		<div data-role="page" id="page1" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
 			<div data-theme="a" data-role="header">
+                <div style=" text-align:center">
+                    <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
+                </div>
 		        <h3>
 		            Student Main
 		        </h3>
   		  	</div>
             <div data-role="content">
-                <a id="edit_profile" data-role="button" data-theme="b" href="http://localhost/index.php/instructor/index/editprofile">
+                <a id="edit_profile" data-role="button" data-theme="e" href="http://localhost/index.php/student/index/student_edit_profile">
                     Edit Profile
                 </a>
-                <a id="instructor_search" data-role="button" data-theme="b" href="http://localhost/index.php/student/index/instructorsearch">
+                <a id="instructor_search" data-role="button" data-theme="e" href="http://localhost/index.php/student/index/instructor_search">
                     Instructor Search
                 </a>
-                <a id="view_bookings" data-role="button" data-theme="b" href="http://localhost/index.php/student/viewBooks">
+                <a id="view_bookings" data-role="button" data-theme="e" href="http://localhost/index.php/student/viewBooks">
                     View Appointments
                 </a>
 

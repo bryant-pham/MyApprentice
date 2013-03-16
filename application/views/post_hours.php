@@ -1,13 +1,4 @@
-        <div data-role="page" data-theme="e" id="posthours" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
-            <div data-theme="a" data-role="header">
-                <div style=" text-align:center">
-                    <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-                </div>
-                <h3>
-                    Post Hours
-                </h3>
-            </div>
-            <div data-role="content">
+            <div data-role="content" data-theme="e" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
                 <form action="http://localhost/index.php/instructor/postHours" method="POST">
                     <label for="mydate">Date</label>
                     <input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox", "overrideDateFormat": "%Y-%m-%d"}'>      

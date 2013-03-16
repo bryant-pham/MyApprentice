@@ -1,4 +1,4 @@
-	<div>
+	<div data-role="content">
 		<ol data-role="listview">
 			<?php foreach( $query as $row ):?>
 			<li><?php 
