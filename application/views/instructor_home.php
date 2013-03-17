@@ -28,10 +28,10 @@
                 <a id="edit_profile" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/index/instructor_edit_profile">
                     Edit Profile
                 </a>
-                <a id="post_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/index/post_hours">
+                <a id="post_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/index/instructor_post_timeslots">
                     Post Hours
                 </a>
-                <a id="view_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/viewHours">
+                <a id="view_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/viewTimeslots">
                     View Your Available Times
                 </a>
                 <a id="view_bookings" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/viewBooks">

@@ -12,7 +12,7 @@ class Instructor_model extends CI_Model {
 		$this->load->database();
 	}
 
-	public function setHours() {
+	public function setTimeslots() {
 		$date = $_POST[ 'date' ];
 		for( $x = 1; $x < 7; $x++ ) {
 			if( $_POST[ 'time'. $x ] ) {
@@ -38,7 +38,7 @@ class Instructor_model extends CI_Model {
 		return TRUE;
 	}
 
-	public function fetchHours() {
+	public function fetchTimeslots() {
 		$query = $this->db->query( 'SELECT hr_id, schedule_date, start_time, end_time
 									FROM hours
 									WHERE ins_id = 1
@@ -56,5 +56,12 @@ class Instructor_model extends CI_Model {
 							AND instructor.ins_id = 1
 							ORDER BY schedule_date ASC' ); //TODO: change hardcoded value
 		return $query;
+	}
+
+	public function unsetTimeslot( $hr_id ) {
+		if( $this->db->query( 'DELETE FROM hours WHERE hr_id = ' . $hr_id ) ) {
+			return TRUE;
+		}
+		return FALSE;
 	}
 }

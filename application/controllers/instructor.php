@@ -2,7 +2,7 @@
 /**
 * Instructor Controller
 *
-* This is controller contains all the actions instructors may perform.
+* This controller contains all the actions instructors may perform.
 */
 
 class Instructor extends CI_Controller {
@@ -22,21 +22,21 @@ class Instructor extends CI_Controller {
 		else $this->load->view( 'instructor_home' );
 	} 
 
-	public function postHours() {
+	public function postTimeslots() {
 		$data[ 'heading' ] = "Schedule Posting Confirmation";
-		if( $this->Instructor_model->setHours() ) {
+		if( $this->Instructor_model->setTimeslots() ) {
 			$this->load->view( 'instructor_header', $data );			
-			$this->load->view( 'success' );
+			$this->load->view( 'success_post_timeslot' );
 			$this->load->view( 'footer' );
 		} 
 	}
 
-	public function viewHours() {
+	public function viewTimeslots() {
 		$data[ 'heading' ] = "Your Available Times";
-		$query = $this->Instructor_model->fetchHours();
+		$query = $this->Instructor_model->fetchTimeslots();
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'instructor_header', $data );
-		$this->load->view( 'view_hours', $data );
+		$this->load->view( 'instructor_view_timeslots', $data );
 		$this->load->view( 'footer' );
 	}
 
@@ -47,5 +47,11 @@ class Instructor extends CI_Controller {
 		$this->load->view( 'instructor_header', $data );
 		$this->load->view( 'view_books', $data );
 		$this->load->view( 'footer' );
+	}
+
+	public function deleteTimeslot( $hr_id ) {
+		if( $this->Instructor_model->unsetTimeslot( $hr_id ) ) {
+			$this->load->view( 'success_delete_timeslot' );
+		}
 	}
 }

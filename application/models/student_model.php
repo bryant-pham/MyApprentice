@@ -1,4 +1,9 @@
 <?php
+/*
+* Student Model
+*
+* This class contains the functions used to perform student actions
+*/
 
 class Student_model extends CI_Model {
 
@@ -16,7 +21,7 @@ class Student_model extends CI_Model {
 		return $query;
 	}
 
-	public function fetchHours( $ins_id ) {
+	public function fetchTimeslots( $ins_id ) {
 		$query = $this->db->query( 'SELECT hr_id, schedule_date, start_time, end_time
 									FROM hours
 									WHERE ins_id = ' . $ins_id .
@@ -25,7 +30,7 @@ class Student_model extends CI_Model {
 		return $query;
 	}
 
-	public function bookHour( $hr_id ) {
+	public function bookTimeslot( $hr_id ) {
 		$this->db->query( 'INSERT INTO bookings VALUES (' . 1 . ', ' . (int) $hr_id . ')' );
 		
 		//TODO: change this hardcoded stu_id

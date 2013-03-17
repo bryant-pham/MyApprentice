@@ -23,7 +23,7 @@
                 <a id="edit_profile" data-role="button" data-theme="e" href="http://localhost/index.php/student/index/student_edit_profile">
                     Edit Profile
                 </a>
-                <a id="instructor_search" data-role="button" data-theme="e" href="http://localhost/index.php/student/index/instructor_search">
+                <a id="instructor_search" data-role="button" data-theme="e" href="http://localhost/index.php/student/index/student_instructor_search">
                     Instructor Search
                 </a>
                 <a id="view_bookings" data-role="button" data-theme="e" href="http://localhost/index.php/student/viewBooks">

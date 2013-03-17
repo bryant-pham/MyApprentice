@@ -1,4 +1,9 @@
 <?php
+/*
+* Student Controller
+*
+* This controller contains all the actions students may perform
+*/
 
 class Student extends CI_Controller {
 
@@ -22,26 +27,24 @@ class Student extends CI_Controller {
 		$query = $this->Student_model->searchInstructor();
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'student_header', $data );
-		$this->load->view( 'view_instructors', $data );
+		$this->load->view( 'student_view_instructors', $data );
 		$this->load->view( 'footer' );
 	}
 
-	public function getHours( $ins_id ) {
+	public function getTimeslots( $ins_id ) {
 		$data[ 'heading' ] = "Instructor Availability Times";
-		$query = $this->Student_model->fetchHours( $ins_id );
+		$query = $this->Student_model->fetchTimeslots( $ins_id );
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'student_header', $data );
-		$this->load->view( 'student_view_hours', $data );
+		$this->load->view( 'student_view_timeslots', $data );
 		$this->load->view( 'footer' );
 
 	}
 
 	public function book( $hr_id ) {
-		$data[ 'heading' ] = "Appointment Booking Confirmation";
-		$this->Student_model->bookHour( $hr_id );
-		$this->load->view( 'student_header', $data );			
-		$this->load->view( 'success' );
-		$this->load->view( 'footer' );
+		$this->Student_model->bookTimeslot( $hr_id );	
+		$this->load->view( 'success_book' );
+
 	}
 
 	public function viewBooks() {

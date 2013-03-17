@@ -14,10 +14,10 @@
 			<div style=" text-align:center">
 				<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 			</div>
-			<h3>Appointment Unbooking Confirmation</h3>
+			<h3>Appointment Booking Confirmation</h3>
 		</div>
 		<div data-role="content" align="center">
-			SUCCESSFULLY UNBOOKED
+			SUCCESSFULLY BOOKED
 		</div>
 	</body>
 </html>
