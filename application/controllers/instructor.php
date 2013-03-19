@@ -10,6 +10,10 @@ class Instructor extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model( 'Instructor_model' );
+		$this->load->model( 'Shared_model' );
+
+		$_SESSION[ 'ins_id' ] = 1;
+		$_SESSION[ 'user_type' ] = 'instructor';
 	}
 
 	public function index( $page = null ) {
@@ -31,18 +35,9 @@ class Instructor extends CI_Controller {
 		} 
 	}
 
-	public function viewTimeslots() {
-		$data[ 'heading' ] = "Your Available Times";
-		$query = $this->Instructor_model->fetchTimeslots();
-		$data[ 'query' ] = $query->result_array();
-		$this->load->view( 'instructor_header', $data );
-		$this->load->view( 'instructor_view_timeslots', $data );
-		$this->load->view( 'footer' );
-	}
-
 	public function viewBooks() {
 		$data[ 'heading'] = "Scheduled Appointments";
-		$query = $this->Instructor_model->fetchBooks();
+		$query = $this->Instructor_model->fetchBooks( $_SESSION[ 'ins_id' ] );
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'instructor_header', $data );
 		$this->load->view( 'view_books', $data );

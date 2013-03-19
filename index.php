@@ -191,6 +191,7 @@ if (defined('ENVIRONMENT'))
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
 
+	session_start(); //TODO: FIND A MORE APPROPRIATE PLACE TO PUT THIS
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

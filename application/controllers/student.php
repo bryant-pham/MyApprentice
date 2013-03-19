@@ -10,6 +10,10 @@ class Student extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model( 'Student_model' );
+		$this->load->model( 'Shared_model' );
+
+		$_SESSION[ 'stu_id' ] = 1;
+		$_SESSION[ 'user_type' ] = 'student';
 	}
 
 	public function index( $page = null ) {
@@ -31,25 +35,9 @@ class Student extends CI_Controller {
 		$this->load->view( 'footer' );
 	}
 
-	public function getTimeslots( $ins_id ) {
-		$data[ 'heading' ] = "Instructor Availability Times";
-		$query = $this->Student_model->fetchTimeslots( $ins_id );
-		$data[ 'query' ] = $query->result_array();
-		$this->load->view( 'student_header', $data );
-		$this->load->view( 'student_view_timeslots', $data );
-		$this->load->view( 'footer' );
-
-	}
-
-	public function book( $hr_id ) {
-		$this->Student_model->bookTimeslot( $hr_id );	
-		$this->load->view( 'success_book' );
-
-	}
-
 	public function viewBooks() {
 		$data[ 'heading'] = "Scheduled Appointments";
-		$query = $this->Student_model->fetchBooks();
+		$query = $this->Student_model->fetchBooks( $_SESSION[ 'stu_id' ] );
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'student_header', $data );
 		$this->load->view( 'view_books', $data );

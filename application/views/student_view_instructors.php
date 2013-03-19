@@ -3,7 +3,7 @@
 				<?php foreach( $query as $row ):?>
 				<li><?php
 					  $ins_id = (string) $row[ 'ins_id' ];
-					  $link = "http://localhost/index.php/student/getTimeslots/" . $ins_id;
+					  $link = "http://localhost/index.php/shared/getTimeslots/" . $ins_id;
 					  echo "<a href=" . $link . ">"; 
 					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
 					  echo "<p>"  . $row[ 'address' ] . "<p>";

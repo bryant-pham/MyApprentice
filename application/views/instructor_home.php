@@ -31,7 +31,7 @@
                 <a id="post_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/index/instructor_post_timeslots">
                     Post Hours
                 </a>
-                <a id="view_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/viewTimeslots">
+                <a id="view_hours" data-role="button" data-theme="e" href="http://localhost/index.php/shared/getTimeslots/">
                     View Your Available Times
                 </a>
                 <a id="view_bookings" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/viewBooks">
