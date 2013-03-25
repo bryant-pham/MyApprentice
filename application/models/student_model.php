@@ -22,7 +22,9 @@ class Student_model extends CI_Model {
 	}
 
 	public function fetchBooks( $stu_id ) {
-		$query = $this->db->query( 'SELECT instructor.ins_id, instructor.f_name, instructor.f_name, instructor.l_name, instructor.email, instructor.phone, schedule_date, start_time, end_time, hours.hr_id, student.stu_id
+		$query = $this->db->query( 'SELECT instructor.ins_id, instructor.f_name, instructor.l_name, instructor.email, instructor.phone, 
+									DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%H:%i") "start_time", TIME_FORMAT(end_time, "%H:%i") "end_time", 
+									hours.hr_id, student.stu_id
 									FROM instructor, hours, bookings, student
 									WHERE instructor.ins_id = hours.ins_id
 									AND hours.hr_id = bookings.hr_id

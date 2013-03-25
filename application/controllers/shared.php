@@ -60,7 +60,7 @@ class Shared extends CI_Controller {
 				$this->load->view( 'student_view_timeslots', $data );
 			}
 			else {
-				$data[ 'stu_id' ] = $_SESSION[ 'stu_id' ];
+				$data[ 'stu_id' ] = $_SESSION[ 'stu_id' ]; //this line broke in PROD, change to $_POST['stu_id']
 				$data[ 'old_hr_id' ] = $_POST[ 'old_hr_id' ];
 				$this->load->view( 'reschedule_view_timeslots', $data );
 			}

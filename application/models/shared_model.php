@@ -26,7 +26,7 @@ class Shared_model extends CI_Model {
 	}
 
 	public function fetchTimeslots( $ins_id ) {
-		$query = $this->db->query( 'SELECT hr_id, schedule_date, start_time, end_time
+		$query = $this->db->query( 'SELECT hr_id, DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%H:%i") "start_time", TIME_FORMAT(end_time, "%H:%i") "end_time"
 									FROM hours
 									WHERE ins_id = ' . $ins_id .
 								  ' AND booked = "false"
