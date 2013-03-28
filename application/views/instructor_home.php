@@ -14,7 +14,11 @@
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.mode.calbox.js"></script>
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.mode.datebox.js"></script>
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
-	</head>
+	
+        <link rel="apple-touch-icon" href="images/appicon.jpg" />
+        <link rel="apple-touch-startup-image" href="images/startup.png">
+        
+    </head>
 
 	<body>
 		<div data-role="page" id="page1" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
