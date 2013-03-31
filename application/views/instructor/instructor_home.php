@@ -21,30 +21,29 @@
     </head>
 
 	<body>
-		<div data-role="page" id="page1" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
-			<div data-theme="a" data-role="header">
-                <div style=" text-align:center">
-                    <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-                </div>
-		        <h3>
-		            Instructor Main
-		        </h3>
-  		  	</div>
-            <div data-role="content">
-                <a id="edit_profile" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/index/instructor_edit_profile">
-                    Edit Profile
-                </a>
-                <a id="post_hours" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/index/instructor_post_timeslots">
-                    Post Hours
-                </a>
-                <a id="view_hours" data-role="button" data-theme="e" href="http://localhost/index.php/shared/getTimeslots/">
-                    View Your Available Times
-                </a>
-                <a id="view_bookings" data-role="button" data-theme="e" href="http://localhost/index.php/instructor/viewBooks">
-                    View Appointments
-                </a>
-
+		<div data-theme="a" data-role="header">
+            <div style=" text-align:center">
+                <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
             </div>
+            <a data-role="button" href="http://localhost/index.php/user/logout" class="ui-btn-right">
+                Logout
+            </a>
+	        <h3>
+	            Instructor Main
+	        </h3>
+	  	</div>
+        <div data-role="content">
+            <a id="edit_profile" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_edit_profile"?>>
+                Edit Profile
+            </a>
+            <a id="post_hours" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_post_timeslots"?>>
+                Post Hours
+            </a>
+            <a id="view_hours" data-role="button" data-theme="e" href=<?php echo site_url() . "/shared/getTimeslots/"?>>
+                View Your Available Times
+            </a>
+            <a id="view_bookings" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/viewBooks"?>>
+                View Appointments
+            </a>
         </div>
-	</body>
-</html>
+        

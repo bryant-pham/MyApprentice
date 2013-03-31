@@ -1,3 +1,5 @@
+        <h3>Edit Account Info</h3>
+      </div>
       <div data-role="content" data-theme="e" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
           <div data-role="fieldcontain">
               <fieldset data-role="controlgroup" data-mini="true">

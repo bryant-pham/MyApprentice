@@ -14,10 +14,10 @@
 			<div style=" text-align:center">
 				<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 			</div>
-			<h3>Rescheduled Appointment Confirmation</h3>
+			<h3>Deleted Timeslot</h3>
 		</div>
 		<div data-role="content" align="center">
-			SUCCESSFULLY RESCHEDULED
+			Successfully Deleted Timeslot!
 		</div>
 	</body>
 </html>

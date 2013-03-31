@@ -1,3 +1,3 @@
 	<div data-role="content" align="center" >
-		SUCCESSFULLY POSTED HOURS!
+		Successfully Posted Hours!
 	</div>

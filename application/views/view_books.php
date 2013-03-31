@@ -1,8 +1,10 @@
+	    <h3>Scheduled Appointments</h3>
+  	</div>
 	<div data-role="content">
 		<ol data-role="listview">
 			<?php foreach( $query as $row ):?>
 			<li><?php 
-					  $unbook_link = "http://localhost/index.php/shared/unbook/" . $row[ 'hr_id' ];
+					  $unbook_link = site_url() . "/shared/unbook/" . $row[ 'hr_id' ];
 					  $reschedule_link = "http://localhost/index.php/shared/getTimeslots/" . $row[ 'ins_id' ] . "/TRUE";
 					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
 					  echo "<p>"  . $row[ 'schedule_date' ] . "<p>";

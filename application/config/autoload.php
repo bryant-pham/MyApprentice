@@ -111,6 +111,14 @@ $autoload['language'] = array();
 
 $autoload['model'] = array();
 
+/*
+| -------------------------------------------------------------------
+|  Auto-load Database and Session
+| -------------------------------------------------------------------
+|
+*/
+
+$autoload['libraries'] = array('database', 'session');
 
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */

@@ -9,7 +9,6 @@ class Shared_model extends CI_Model {
 
 	public function __construct() {
 		parent::__construct();
-		$this->load->database();
 	}	
 
 	public function deleteBook( $hr_id ) {
@@ -32,5 +31,24 @@ class Shared_model extends CI_Model {
 								  ' AND booked = "false"
 								    ORDER BY schedule_date ASC' );
 		return $query;
+	}
+
+	public function updatePersonalInfo() {
+		$f_name  = $_POST[ 'f_name' ];
+		$l_name  = $_POST[ 'l_name' ];
+		$phone   = $_POST[ 'phone' ];
+		$address = $_POST[ 'address' ];
+
+		$data = array( 
+			'f_name'  => $f_name,
+			'l_name'  => $l_name,
+			'phone'   => $phone,
+			'address' => $address,
+		);
+		$this->db->where( 'ins_id', $this->session->userdata( 'user_id' ) );
+		if( $this->db->update( $this->session->userdata('user_type'), $data ) ) {
+			return TRUE;
+		}
+		else return FALSE;
 	}
 }

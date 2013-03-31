@@ -1,9 +1,11 @@
+		    <h3>Instructor Results</h3>
+ 		 </div>
 		<div data-role="content">
 			<ol data-role="listview" data-split-icon="gear">
 				<?php foreach( $query as $row ):?>
 				<li><?php
 					  $ins_id = (string) $row[ 'ins_id' ];
-					  $link = "http://localhost/index.php/shared/getTimeslots/" . $ins_id;
+					  $link = site_url() . "/shared/getTimeslots/" . $ins_id;
 					  echo "<a href=" . $link . ">"; 
 					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
 					  echo "<p>"  . $row[ 'address' ] . "<p>";
