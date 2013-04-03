@@ -1,4 +1,4 @@
-	    <h3>Scheduled Appointments</h3>
+	    <h3>Appointments</h3>
   	</div>
 	<div data-role="content">
 		<ol data-role="listview">
@@ -11,7 +11,6 @@
 					  echo "<p>"  . $row[ 'start_time' ] . " - " . $row[ 'end_time' ] . "<p>";
 					  echo "<p>"  . $row[ 'email' ] . "<p>";
 					  echo "<p>"  . $row[ 'phone' ] . "<p>";
-					  echo "<p>"  . $row[ 'hr_id' ] . "<p>";
 				?>
 				<div data-role="controlgroup" data-type="horizontal">
 					<form action=<?php echo $reschedule_link; ?> method="POST">

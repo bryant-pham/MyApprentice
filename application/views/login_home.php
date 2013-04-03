@@ -8,11 +8,15 @@
     <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="HandheldFriendly" content="true"/>
 
-    
-
+    <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
   </head>
-<div data-role="page" data-theme="e" id="page1" >
+  <body>
+  <div data-role="page" data-theme="e" id="page1" >
       <div data-theme="a" data-role="header">
           <div style=" text-align:center">
               <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">

@@ -8,10 +8,12 @@
         <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="HandheldFriendly" content="true"/>
         
-        <link rel="apple-touch-icon" href="images/appicon.jpg" />
-        <link rel="apple-touch-startup-image" href="images/startup.png">
-
+        <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
 	</head>
 
 	<body>
