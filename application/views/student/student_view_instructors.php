@@ -1,7 +1,7 @@
 		    <h3>Instructor Results</h3>
  		 </div>
 		<div data-role="content">
-			<ol data-role="listview" data-split-icon="gear">
+			<ul data-role="listview" data-split-icon="gear">
 				<?php foreach( $query as $row ):?>
 				<li><?php
 					  $ins_id = (string) $row[ 'ins_id' ];
@@ -15,5 +15,5 @@
 					?>
 				</li>
 				<?php endforeach; ?>
-			</ol>
+			</ul>
 		</div>
