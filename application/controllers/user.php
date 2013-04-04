@@ -9,8 +9,11 @@ class User extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 
-	public function index( $page ) {
-		$this->load->view( $page );
+	public function index( $page = NULL ) {
+		if( $page ) {
+			$this->load->view( $page );
+		}
+		else $this->load->view( 'login_home' );
 	}
 
 	public function login() {
@@ -43,7 +46,7 @@ class User extends CI_Controller {
 		}
 		else {
 			if( $this->User_model->createUser() ) {
-				$this->load->view( 'success\success_form_registration' );
+				$this->load->view( 'success/success_form_registration' );
 			} //TODO: Error catch here
 		}
     }

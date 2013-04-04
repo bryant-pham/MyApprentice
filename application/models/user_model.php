@@ -18,6 +18,7 @@ class User_model extends CI_Model {
 			$row = $query->row();
 			$this->session->set_userdata( 'user_type', $row->user_type );
 			$this->session->set_userdata( 'validated', TRUE );
+			$this->session->set_userdata( 'account_id', $row->id );
 			$this->setUserInfo( $row->id );
 			return TRUE;
 		}

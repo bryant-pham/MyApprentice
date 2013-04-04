@@ -30,19 +30,19 @@ class Shared extends CI_Controller {
 	//Look over this function to see if it belongs in this controller later
 	public function book( $stu_id, $hr_id ) {
 		$this->Shared_model->bookTimeslot( $stu_id, $hr_id );	
-		$this->load->view( 'success\success_book' );
+		$this->load->view( 'success/success_book' );
 	}
 
 	public function unbook( $hr_id ) {
 		if( $this->Shared_model->deleteBook( $hr_id ) ) {
-			$this->load->view( 'success\success_unbook' );
+			$this->load->view( 'success/success_unbook' );
 		}
 	}
 
 	public function reschedule( $stu_id, $old_hr_id, $new_hr_id ) {
 		$this->Shared_model->deleteBook( $old_hr_id );
 		$this->Shared_model->bookTimeslot( $stu_id, $new_hr_id );
-		$this->load->view( 'success\success_reschedule' );
+		$this->load->view( 'success/success_reschedule' );
 	}
 
 	public function getTimeslots( $ins_id = NULL, $reschedule = FALSE ) {
@@ -63,7 +63,7 @@ class Shared extends CI_Controller {
 			$query = $this->Shared_model->fetchTimeslots( $ins_id );
 			$data[ 'query' ] = $query->result_array();
 			if( !$reschedule ) {
-				$this->load->view( 'student\student_view_timeslots', $data );
+				$this->load->view( 'student/student_view_timeslots', $data );
 			}
 			else {
 				$data[ 'stu_id' ] = $this->user_id;
@@ -86,7 +86,21 @@ class Shared extends CI_Controller {
 		}
 		else {
 			if( $this->Shared_model->updatePersonalInfo() ) {
-				$this->load->view( 'success\success_form_personal' );
+				$this->load->view( 'success/success_form_personal' );
+			} //TODO: Error catch here
+		}
+	}
+
+	public function saveAccountInfo() {
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+
+		if( $this->form_validation->run() == FALSE ) {
+			$this->load->view( 'form_account' );
+		}
+		else {
+			if( $this->Shared_model->updateAccountInfo() ) {
+				$this->load->view( 'success/success_form_personal' );
 			} //TODO: Error catch here
 		}
 	}

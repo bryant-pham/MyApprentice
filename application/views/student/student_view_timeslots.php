@@ -1,7 +1,7 @@
 		    <h3>View Timeslots</h3>
  		 </div>
 		<div data-role="content">
-			<ol data-role="listview">
+			<ul data-role="listview">
 				<?php foreach( $query as $row ):?>
 				<li><?php
 					  $book_link = site_url() . "/shared/book/" . $this->session->userdata( 'user_id' ) . "/" .$row[ 'hr_id' ]; 
@@ -13,5 +13,5 @@
 					<a data-role="button" data-theme="e" data-rel="dialog" href=<?php echo $book_link; ?>>Book</a>
 				</li>
 				<?php endforeach; ?>
-			</ol>
+			</ul>
 		</div>

@@ -17,20 +17,23 @@
 	  	<div data-theme="a" data-role="header" data-position="fixed">
 	      	<div style=" text-align:center">
 	          <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-	      	</div>
-			<a data-role="button" href=<?php echo site_url() . "/" . $this->session->userdata('user_type') ?> class="ui-btn-left">
-              	Home
-          	</a>
-			<a data-role="button" href=<?php echo site_url() . "/user/logout" ?> class="ui-btn-right">
-              	Logout
-          	</a>
-	      	<h3>
-	          Account Update
-	      	</h3>
+	      	</div>		   
+		    <h3>My Apprentice</h3>
+  		</div>
+		<div data-role="content" data-theme="e">
+			<?php echo form_open('general/instructorSearch'); ?>
+				<fieldset data-role="controlgroup">
+					<div align="center">
+						<h3>Start by entering an instrument</h3>
+					</div>
+					<input type="text" name="instrument" placeholder="Enter type of instrument">
+				</fieldset>
+				<input type="submit" value="Search">
+			</form>
+			<fieldset data-role="controlgroup">
+					<a data-role="button" href="<?php echo site_url() . '/user'?>">OR Log in/Register here</a>
+				</fieldset>
 		</div>
-		<div data-role="content" align="center">
-			Your account has been successfully updated!
-		</div>
-	</div>
-</body>
+	</body>
 </html>
+		

@@ -17,20 +17,25 @@
 	  	<div data-theme="a" data-role="header" data-position="fixed">
 	      	<div style=" text-align:center">
 	          <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-	      	</div>
-			<a data-role="button" href=<?php echo site_url() . "/" . $this->session->userdata('user_type') ?> class="ui-btn-left">
-              	Home
-          	</a>
-			<a data-role="button" href=<?php echo site_url() . "/user/logout" ?> class="ui-btn-right">
-              	Logout
-          	</a>
-	      	<h3>
-	          Account Update
-	      	</h3>
+	      	</div>		    
+		    <h3>Instructor Results</h3>
+ 		 </div>
+		<div data-role="content">
+			<ul data-role="listview" data-split-icon="gear">
+				<?php foreach( $query as $row ):?>
+				<li><?php
+					  $ins_id = (string) $row[ 'ins_id' ];
+					  $link = site_url() . "/general/index/login_prompt";
+					  echo "<a href=" . $link . " data-rel='dialog'>"; 
+					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
+					  echo "<p>"  . $row[ 'address' ] . "<p>";
+					  echo "<p>"  . $row[ 'phone' ] . "<p>";
+					  echo "<p>"  . $row[ 'email' ] . "<p>";
+					  echo "</a>";
+					?>
+				</li>
+				<?php endforeach; ?>
+			</ul>
 		</div>
-		<div data-role="content" align="center">
-			Your account has been successfully updated!
-		</div>
-	</div>
-</body>
+	</body>
 </html>

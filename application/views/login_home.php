@@ -14,6 +14,8 @@
     <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
     <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+
+    <link rel="apple-touch-startup-image" href="img/startup.png">
   </head>
   <body>
   <div data-role="page" data-theme="e" id="page1" >

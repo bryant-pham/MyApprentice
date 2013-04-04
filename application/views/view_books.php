@@ -1,7 +1,7 @@
 	    <h3>Appointments</h3>
   	</div>
 	<div data-role="content">
-		<ol data-role="listview">
+		<ul data-role="listview">
 			<?php foreach( $query as $row ):?>
 			<li><?php 
 					  $unbook_link = site_url() . "/shared/unbook/" . $row[ 'hr_id' ];
@@ -22,5 +22,5 @@
 				</div>
 			</li>
 			<?php endforeach; ?>
-		</ol>
+		</ul>
 	</div>

@@ -25,11 +25,11 @@ class Instructor extends CI_Controller {
 		if( $page != null ) {
 			$data[ 'heading' ] = (string) $page;
 			$this->load->view( 'header' );
-			$this->load->view( 'instructor\\' . $page  );
+			$this->load->view( 'instructor/' . $page  );
 			$this->load->view( 'footer' );
 		}
 		else {
-			$this->load->view( 'instructor\instructor_home' );
+			$this->load->view( 'instructor/instructor_home' );
 			$this->load->view( 'footer' );
 		}
 	} 
@@ -37,7 +37,7 @@ class Instructor extends CI_Controller {
 	public function postTimeslots() {
 		if( $this->Instructor_model->setTimeslots() ) {
 			$this->load->view( 'header' );			
-			$this->load->view( 'success\success_post_timeslot' );
+			$this->load->view( 'success/success_post_timeslot' );
 			$this->load->view( 'footer' );
 		} 
 	}
@@ -52,7 +52,7 @@ class Instructor extends CI_Controller {
 
 	public function deleteTimeslot( $hr_id ) {
 		if( $this->Instructor_model->unsetTimeslot( $hr_id ) ) {
-			$this->load->view( 'success\success_delete_timeslot' );
+			$this->load->view( 'success/success_delete_timeslot' );
 		}
 	}
 }

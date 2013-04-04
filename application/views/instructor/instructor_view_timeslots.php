@@ -1,7 +1,7 @@
 	    <h3>Your Timeslots</h3>
   	</div>
 	<div data-role="content">
-		<ol data-role="listview">
+		<ul data-role="listview">
 			<?php foreach( $query as $row ):?>
 			<li><?php 
 					$delete_link = site_url() . "/instructor/deleteTimeslot/" . $row[ 'hr_id' ];
@@ -12,5 +12,5 @@
 				<a data-role="button" data-theme="e" data-rel="dialog" href=<?php echo $delete_link; ?>>Delete</a>
 			</li>
 			<?php endforeach; ?>
-		</ol>
+		</ul>
 	</div>

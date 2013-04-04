@@ -45,8 +45,27 @@ class Shared_model extends CI_Model {
 			'phone'   => $phone,
 			'address' => $address,
 		);
-		$this->db->where( 'ins_id', $this->session->userdata( 'user_id' ) );
+		if( $this->session->userdata( 'user_type' ) == 'instructor' ) {
+			$this->db->where( 'ins_id', $this->session->userdata( 'user_id' ) );
+		}
+		else $this->db->where( 'stu_id', $this->session->userdata( 'user_id' ) );
+
 		if( $this->db->update( $this->session->userdata('user_type'), $data ) ) {
+			return TRUE;
+		}
+		else return FALSE;
+	}
+
+	public function updateAccountInfo() {
+		$email = $_POST[ 'email' ];
+		$password = md5( $_POST[ 'password' ] );
+
+		$data = array( 
+			'email'  => $email,
+			'password'  => $password,
+		);
+		$this->db->where( 'id', $this->session->userdata( 'account_id' ) );
+		if( $this->db->update( 'users', $data ) ) {
 			return TRUE;
 		}
 		else return FALSE;

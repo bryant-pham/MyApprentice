@@ -21,7 +21,7 @@
             <div style=" text-align:center">
                 <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
             </div>
-            <a data-role="button" href="http://localhost/index.php/user/logout" class="ui-btn-right">
+            <a data-role="button" href=<?php echo site_url() . "/user/logout"?> class="ui-btn-right">
                 Logout
             </a>
 	        <h3>

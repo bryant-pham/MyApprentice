@@ -21,6 +21,7 @@ class Student_model extends CI_Model {
 		return $query;
 	}
 
+	//TODO: consider replacing this parameter with session variable
 	public function fetchBooks( $stu_id ) {
 		$query = $this->db->query( 'SELECT instructor.ins_id, instructor.f_name, instructor.l_name, users.email, mask(instructor.phone, "(###) ###-####") "phone", 
 									DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%H:%i") "start_time", TIME_FORMAT(end_time, "%H:%i") "end_time", 

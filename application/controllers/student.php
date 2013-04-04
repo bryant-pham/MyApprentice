@@ -23,11 +23,11 @@ class Student extends CI_Controller {
 	public function index( $page = null ) {
 		if( $page != null ) {
 			$this->load->view( 'header' );
-			$this->load->view( 'student\\' . $page  );
+			$this->load->view( 'student/' . $page  );
 			$this->load->view( 'footer' );
 		}
 		else {
-			$this->load->view( 'student\student_home' );
+			$this->load->view( 'student/student_home' );
 			$this->load->view( 'footer' );
 		}
 	}
@@ -36,7 +36,7 @@ class Student extends CI_Controller {
 		$query = $this->Student_model->searchInstructor();
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'header' );
-		$this->load->view( 'student\student_view_instructors', $data );
+		$this->load->view( 'student/student_view_instructors', $data );
 		$this->load->view( 'footer' );
 	}
 

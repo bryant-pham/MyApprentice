@@ -26,7 +26,7 @@ class Instructor_model extends CI_Model {
 					'schedule_date' => $date,
 					'start_time' => $start_time,
 					'end_time' => $end_time,
-					'ins_id' => $_SESSION[ 'ins_id' ], 
+					'ins_id' => $this->session->userdata( 'user_id' ), 
 					'booked' => 0
 				);
 				if( !( $this->db->insert( 'hours', $data ) ) ) {
@@ -44,6 +44,7 @@ class Instructor_model extends CI_Model {
 		return FALSE;
 	}
 
+	//TODO: consider replacing this parameter with session variable
 	public function fetchBooks( $ins_id ) {
 		$query = $this->db->query( 'SELECT student.stu_id, student.f_name, student.l_name, users.email, mask(student.phone, "(###) ###-####") "phone", 
 									DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%H:%i") "start_time", TIME_FORMAT(end_time, "%H:%i") "end_time", 
