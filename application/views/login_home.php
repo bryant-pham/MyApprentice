@@ -29,7 +29,7 @@
       </div>
       
       <div data-role="content" style="padding: 15%">
-        <?php echo form_open('user/login'); ?>
+        <form action="<?php echo site_url() . '/user/login' ?>" method="POST" data-ajax="false">
           <div data-role="fieldcontain">
               <fieldset data-role="controlgroup">
                   <label for="textinput1">

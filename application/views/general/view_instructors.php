@@ -13,7 +13,7 @@
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script> 
 </head>
 <body>
-  	<div data-role="page" data-theme="e">
+  	<div data-role="page">
 	  	<div data-theme="a" data-role="header" data-position="fixed">
 	      	<div style=" text-align:center">
 	          <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">

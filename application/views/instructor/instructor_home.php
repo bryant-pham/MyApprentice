@@ -36,16 +36,16 @@
 	        </h3>
 	  	</div>
         <div data-role="content">
-            <a id="edit_profile" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_edit_profile"?>>
+            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_edit_profile"?>>
                 Edit Profile
             </a>
-            <a id="post_hours" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_post_timeslots"?>>
+            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_post_timeslots"?>>
                 Post Hours
             </a>
-            <a id="view_hours" data-role="button" data-theme="e" href=<?php echo site_url() . "/shared/getTimeslots/"?>>
+            <a data-role="button" data-theme="e" href="<?php echo site_url() . "/shared/getTimeslots/"?>">
                 View Your Available Times
             </a>
-            <a id="view_bookings" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/viewBooks"?>>
+            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/viewBooks"?>>
                 View Appointments
             </a>
         </div>

@@ -1,6 +1,6 @@
                 <h3>Post Timeslots</h3>
             </div>
-            <div data-role="content" data-theme="e" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
+            <div data-role="content" data-theme="e" style="#">
                 <?php echo form_open('instructor/postTimeslots'); ?>
                     <label for="mydate">Date</label>
                     <input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox", "overrideDateFormat": "%Y-%m-%d"}'>      

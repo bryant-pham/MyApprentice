@@ -6,11 +6,17 @@
  	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
   	
-  	<title>MyApp-rentice</title>
+  	<title>MyApprentice</title>
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script> 
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+
+    <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+   	<link rel="apple-touch-startup-image" href="http://myapprenticeapp.com/img/Default.png" />
 </head>
 <body>
   	<div data-role="page" data-theme="e">
@@ -21,7 +27,7 @@
 		    <h3>My Apprentice</h3>
   		</div>
 		<div data-role="content" data-theme="e">
-			<?php echo form_open('general/instructorSearch'); ?>
+			<form action="<?php echo site_url() . '/general/instructorSearch'?>" method="POST" data-ajax="false">
 				<fieldset data-role="controlgroup">
 					<div align="center">
 						<h3>Start by entering an instrument</h3>
