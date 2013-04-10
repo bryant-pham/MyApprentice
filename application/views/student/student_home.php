@@ -35,6 +35,9 @@
             <a id="instructor_search" data-role="button" data-theme="e" href=<?php echo site_url() . "/student/index/student_instructor_search"?>>
                 Instructor Search
             </a>
+            <a id="view_instructors" data-role="button" data-theme="e" href=<?php echo site_url() . "/student/viewInstructors"?>>
+                Your Instructors
+            </a>
             <a id="view_bookings" data-role="button" data-theme="e" href=<?php echo site_url() . "/student/viewBooks"?>>
                 View Appointments
             </a>

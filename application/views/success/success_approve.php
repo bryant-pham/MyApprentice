@@ -11,7 +11,6 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 	</head>
-
 	<body>
 		<div data-theme="a" data-role="header">
 			<div style=" text-align:center">
@@ -19,10 +18,11 @@
 					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 				</a>			
 			</div>
-			<h3>Booking Confirm</h3>
+			<h3>Approve Confirm</h3>
 		</div>
 		<div data-role="content" align="center">
-			Successfully Booked!
+			You have sucessfully approved this student!
+			This student will now be able to book you for lessons!
 		</div>
 	</body>
 </html>

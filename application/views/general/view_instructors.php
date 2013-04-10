@@ -17,7 +17,10 @@
 	  	<div data-theme="a" data-role="header" data-position="fixed">
 	      	<div style=" text-align:center">
 	          <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-	      	</div>		    
+	      	</div>
+			<a data-role="button" href="#" data-rel="back" class="ui-btn-left">
+              	Back
+          	</a>		    
 		    <h3>Instructor Results</h3>
  		 </div>
 		<div data-role="content">

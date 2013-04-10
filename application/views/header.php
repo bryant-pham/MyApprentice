@@ -4,6 +4,7 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+		<link rel="stylesheet" href="http://localhost/style/style.css"/>
 
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -25,9 +26,10 @@
 	<body>
 		<div data-theme="a" data-role="header">
 			<div style=" text-align:center">
-				<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
+				<a href=<?php echo site_url() . "/" . $this->session->userdata('user_type')?>>
+					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
+				</a>
 			</div>
-
 			<a data-role="button" href="#" data-rel="back" class="ui-btn-left">
               	Back
           	</a>

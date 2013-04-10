@@ -35,4 +35,25 @@ class Student_model extends CI_Model {
 								  ' ORDER BY schedule_date ASC' );
 		return $query;
 	}
+
+	public function applyRequest( $ins_id ) {
+		$data = array(
+			'ins_id' => $ins_id,
+			'stu_id' => $this->session->userdata( 'user_id' ),
+			'approved' => 0
+		);
+		if( $this->db->insert( 'requests', $data ) ) {
+			return TRUE;
+		}
+		return FALSE;
+	}
+
+	public function fetchInstructors() {
+		$query = $this->db->query( 'SELECT f_name, l_name, users.email, mask(phone, "(###) ###-####") "phone", address, instructor.ins_id
+							FROM instructor, requests, users
+							WHERE instructor.ins_id = requests.ins_id
+							AND instructor.user_id = users.id
+							AND approved = 1' );
+		return $query;
+	}
 }

@@ -36,7 +36,7 @@ class Student extends CI_Controller {
 		$query = $this->Student_model->searchInstructor();
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'header' );
-		$this->load->view( 'student/student_view_instructors', $data );
+		$this->load->view( 'student/student_search_results', $data );
 		$this->load->view( 'footer' );
 	}
 
@@ -46,6 +46,19 @@ class Student extends CI_Controller {
 		$this->load->view( 'header' );
 		$this->load->view( 'view_books', $data );
 		$this->load->view( 'footer' );
-	
 	}	
+
+	public function apply( $ins_id ) {
+		if( $this->Student_model->applyRequest( $ins_id ) ) {
+			$this->load->view( 'success/success_apply' );
+		}
+	}
+
+	public function viewInstructors() {
+		$query = $this->Student_model->fetchInstructors( $this->user_id );
+		$data[ 'query' ] = $query->result_array();
+		$this->load->view( 'header' );
+		$this->load->view( 'student/student_view_instructors', $data );
+		$this->load->view( 'footer' );
+	}
 }

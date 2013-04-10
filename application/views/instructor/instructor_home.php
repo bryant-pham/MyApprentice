@@ -42,6 +42,9 @@
             <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_post_timeslots"?>>
                 Post Hours
             </a>
+            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/viewRequests"?>>
+                View Student Requests
+            </a>
             <a data-role="button" data-theme="e" href="<?php echo site_url() . "/shared/getTimeslots/"?>">
                 View Your Available Times
             </a>

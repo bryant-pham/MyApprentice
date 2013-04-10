@@ -55,4 +55,18 @@ class Instructor extends CI_Controller {
 			$this->load->view( 'success/success_delete_timeslot' );
 		}
 	}
+
+	public function viewRequests() {
+		$query = $this->Instructor_model->fetchRequests( $this->user_id );
+		$data[ 'query' ] = $query->result_array();
+		$this->load->view( 'header' );
+		$this->load->view( 'instructor/instructor_view_requests', $data );
+		$this->load->view( 'footer' );
+	}
+
+	public function approve( $stu_id ) {
+		if( $this->Instructor_model->approveRequest( $stu_id, $this->user_id ) ) {
+			$this->load->view( 'success/success_approve' );
+		}
+	}
 }

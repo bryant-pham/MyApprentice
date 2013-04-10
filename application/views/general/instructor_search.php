@@ -29,16 +29,29 @@
 		<div data-role="content" data-theme="e">
 			<form action="<?php echo site_url() . '/general/instructorSearch'?>" method="POST" data-ajax="false">
 				<fieldset data-role="controlgroup">
-					<div align="center">
-						<h3>Start by entering an instrument</h3>
-					</div>
-					<input type="text" name="instrument" placeholder="Enter type of instrument">
+					<h3 align="center">Find your music teacher</h3>
+					<label for="zip_code">Zip Code:</label>
+					<input type="text" name="zip_code">
+					<label for="instrument">Instrument:</label>
+				    <select name="instrument" id="select_instrument">
+				        <option value="drums">Drums</option>
+				        <option value="piano">Piano</option>
+				        <option value="guitar">Guitar</option>
+				        <option value="voice">Voice</option>
+				        <option value="harmonica">Harmonica</option>
+				        <option value="saxaphone">Saxaphone</option>
+				    </select>
+				    <label for="location">Location:</label>
+				    <select name="location" id="select_location">
+				        <option value="in_studio">In-Studio</option>
+				        <option value="in_home">In-Home</option>
+				    </select>
 				</fieldset>
 				<input type="submit" value="Search">
 			</form>
 			<fieldset data-role="controlgroup">
 					<a data-role="button" href="<?php echo site_url() . '/user'?>">OR Log in/Register here</a>
-				</fieldset>
+			</fieldset>
 		</div>
 	</body>
 </html>
