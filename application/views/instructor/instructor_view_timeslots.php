@@ -1,6 +1,7 @@
 	    <h3>Your Timeslots</h3>
   	</div>
 	<div data-role="content">
+		<?php if( !( empty( $query ) ) ) {?>
 		<ul data-role="listview" data-divider-theme="a">
 			<?php foreach( $query as $date => $data ): ?>
 			<li data-role="list-divider"><?php echo $date ?></li>
@@ -14,4 +15,5 @@
 				<?php endforeach; ?>
 			<?php endforeach; ?>
 		</ul>
+		<?php } else echo "<h1 align='center'>No Timeslots Available</h1>" ?>
 	</div>

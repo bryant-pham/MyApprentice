@@ -1,6 +1,7 @@
 		    <h3>Instructor Results</h3>
  		 </div>
 		<div data-role="content">
+			<?php if( !( empty( $query ) ) ) {?>
 			<ul data-role="listview" data-split-icon="gear">
 				<?php foreach( $query as $row ):?>
 				<li><?php
@@ -15,4 +16,5 @@
 				</li>
 				<?php endforeach; ?>
 			</ul>
+			<?php } else echo "<h1 align='center'>No Instructors Found</h1>" ?>
 		</div>
