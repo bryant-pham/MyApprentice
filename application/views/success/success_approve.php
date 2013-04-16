@@ -18,11 +18,11 @@
 					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 				</a>			
 			</div>
-			<h3>Approve Confirm</h3>
 		</div>
 		<div data-role="content" align="center">
-			You have sucessfully approved this student!
-			This student will now be able to book you for lessons!
+			<strong>You have sucessfully approved this student!<strong>
+			<strong>This student will now be able to book you for lessons!<strong>
+			<a href="#" data-role="button" data-rel="back" data-theme="e">OK</a>
 		</div>
 	</body>
 </html>

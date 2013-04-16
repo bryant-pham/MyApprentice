@@ -44,7 +44,6 @@ class Instructor_model extends CI_Model {
 		return FALSE;
 	}
 
-	//TODO: consider replacing this parameter with session variable
 	public function fetchBooks( $ins_id ) {
 		$query = $this->db->query( 'SELECT student.stu_id, student.f_name, student.l_name, users.email, mask(student.phone, "(###) ###-####") "phone", 
 									DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%H:%i") "start_time", TIME_FORMAT(end_time, "%H:%i") "end_time", 
@@ -55,12 +54,22 @@ class Instructor_model extends CI_Model {
 									AND hours.hr_id = bookings.hr_id
 									AND bookings.stu_id = student.stu_id
 									AND instructor.ins_id = ' . $ins_id .
-								  ' ORDER BY schedule_date ASC' ); 
-		return $query;
+								  ' ORDER BY schedule_date ASC' );
+		$sorted_dict = array();
+		foreach( $query->result_array() as $row ) {
+			$schedule_date = $row[ 'schedule_date' ];
+			if( array_key_exists( $schedule_date, $sorted_dict ) ){
+				array_push( $sorted_dict[$schedule_date], $row );
+			}
+			else{
+				$sorted_dict[ $schedule_date ] = array( $row );
+			}
+		}
+		return $sorted_dict;
 	}
 
 	public function fetchRequests( $ins_id ) {
-		$query = $this->db->query( 'SELECT f_name, l_name, users.email, mask(phone, "(###) ###-####") "phone", address, student.stu_id
+		$query = $this->db->query( 'SELECT f_name, l_name, users.email, mask(phone, "(###)###-####") "phone", address, student.stu_id
 							FROM student, requests, users
 							WHERE student.stu_id = requests.stu_id
 							AND student.user_id = users.id

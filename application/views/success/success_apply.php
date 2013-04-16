@@ -18,11 +18,11 @@
 					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 				</a>			
 			</div>
-			<h3>Apply Confirm</h3>
 		</div>
 		<div data-role="content" align="center">
-			You have sucessfully applied!
-			The instructor will approve you and allow you to book lessons soon!
+			<strong>You have successfully applied<br><strong>
+			The instructor will approve you and allow you to book lessons soon
+			<a href="#" data-role="button" data-rel="back" data-theme="e">OK</a>
 		</div>
 	</body>
 </html>

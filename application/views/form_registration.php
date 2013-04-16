@@ -11,7 +11,7 @@
   <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>  
 </head>
 <body>
-  <div data-role="page" data-theme="e" id="page4" style="background: url('http://assets.codiqa.com/QDVFGnpQgaozktXIusfj_c6.jpg') no-repeat">
+  <div data-role="page" data-theme="e">
       <div data-theme="a" data-role="header" data-position="fixed">
           <div style=" text-align:center">
               <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">

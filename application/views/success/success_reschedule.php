@@ -18,10 +18,10 @@
 					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 				</a>			
 			</div>
-			<h3>Reschedule Confirm</h3>
 		</div>
 		<div data-role="content" align="center">
 			Successfully Rescheduled!
+			<a href=<?php echo site_url() . '/' . $this->session->userdata('user_type') . '/viewBooks' ?> data-role="button" data-theme="e">OK</a>
 		</div>
 	</body>
 </html>

@@ -13,25 +13,17 @@
 	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script> 
 </head>
 <body>
-  	<div data-role="page" data-theme="e">
+  	<div data-role="dialog">
 	  	<div data-theme="a" data-role="header" data-position="fixed">
 	      	<div style=" text-align:center">
 				<a href=<?php echo site_url() . "/" . $this->session->userdata('user_type')?>>
 					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 				</a>	      	
 			</div>
-			<a data-role="button" href=<?php echo site_url() . "/" . $this->session->userdata('user_type') ?> class="ui-btn-left">
-              	Home
-          	</a>
-			<a data-role="button" href=<?php echo site_url() . "/user/logout" ?> class="ui-btn-right">
-              	Logout
-          	</a>
-	      	<h3>
-	          Account Update
-	      	</h3>
 		</div>
 		<div data-role="content" align="center">
-			Your account has been successfully updated!
+			<strong>Your account has been successfully updated<strong>
+			<a href=<?php echo site_url() . '/' . $this->session->userdata('user_type') ?> data-role="button" data-theme="e">OK</a>
 		</div>
 	</div>
 </body>

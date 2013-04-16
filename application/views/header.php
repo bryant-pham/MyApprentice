@@ -18,18 +18,14 @@
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
 
 		<link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
-    	<link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
-    	<link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
-    	<link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+   		<link rel="apple-touch-startup-image" href="http://myapprenticeapp.com/img/Default.png" />
 	</head>
 
 	<body>
 		<div data-theme="a" data-role="header">
-			<div style=" text-align:center">
-				<a href=<?php echo site_url() . "/" . $this->session->userdata('user_type')?>>
-					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-				</a>
-			</div>
 			<a data-role="button" href="#" data-rel="back" class="ui-btn-left">
               	Back
           	</a>

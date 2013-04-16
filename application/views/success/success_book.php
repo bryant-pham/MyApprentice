@@ -13,16 +13,9 @@
 	</head>
 
 	<body>
-		<div data-theme="a" data-role="header">
-			<div style=" text-align:center">
-				<a href=<?php echo site_url() . "/" . $this->session->userdata('user_type')?>>
-					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-				</a>			
-			</div>
-			<h3>Booking Confirm</h3>
-		</div>
 		<div data-role="content" align="center">
-			Successfully Booked!
+			<strong>Successfully Booked<strong>
+			<a data-role="button" href=<?php echo site_url() . '/' . $this->session->userdata('user_type')?> data-theme="e">OK</a>
 		</div>
 	</body>
 </html>

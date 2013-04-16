@@ -19,10 +19,10 @@
 					<img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
 				</a>			
 			</div>
-			<h3>Unbook Confirm</h3>
 		</div>
 		<div data-role="content" align="center">
-			Successfully Unbooked!
+			<strong>Successfully Unbooked<strong>
+			<a href="#" data-role="button" data-rel="back" data-theme="e">OK</a>
 		</div>
 	</body>
 </html>

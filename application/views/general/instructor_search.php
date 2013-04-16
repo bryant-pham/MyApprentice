@@ -5,7 +5,8 @@
  	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
  	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-  	
+	<meta name="HandheldFriendly" content="true"/>
+
   	<title>MyApprentice</title>
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
@@ -23,7 +24,7 @@
 	  	<div data-theme="a" data-role="header" data-position="fixed">
 	      	<div style=" text-align:center">
 	          <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-	      	</div>		   
+	      	</div>
 		    <h3>My Apprentice</h3>
   		</div>
 		<div data-role="content" data-theme="e">
@@ -55,4 +56,3 @@
 		</div>
 	</body>
 </html>
-		

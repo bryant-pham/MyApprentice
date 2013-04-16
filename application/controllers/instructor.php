@@ -44,7 +44,7 @@ class Instructor extends CI_Controller {
 
 	public function viewBooks() {
 		$query = $this->Instructor_model->fetchBooks( $this->user_id );
-		$data[ 'query' ] = $query->result_array();
+		$data[ 'query' ] = $query;
 		$this->load->view( 'header' );
 		$this->load->view( 'view_books', $data );
 		$this->load->view( 'footer' );

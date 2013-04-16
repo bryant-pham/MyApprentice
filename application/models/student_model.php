@@ -33,7 +33,17 @@ class Student_model extends CI_Model {
 									AND bookings.stu_id = student.stu_id
 									AND student.stu_id = ' . $stu_id .
 								  ' ORDER BY schedule_date ASC' );
-		return $query;
+		$sorted_dict = array();
+		foreach( $query->result_array() as $row ) {
+			$schedule_date = $row[ 'schedule_date' ];
+			if( array_key_exists( $schedule_date, $sorted_dict ) ){
+				array_push( $sorted_dict[$schedule_date], $row );
+			}
+			else{
+				$sorted_dict[ $schedule_date ] = array( $row );
+			}
+		}
+		return $sorted_dict;
 	}
 
 	public function applyRequest( $ins_id ) {

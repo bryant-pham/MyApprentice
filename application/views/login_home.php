@@ -11,11 +11,11 @@
     <meta name="HandheldFriendly" content="true"/>
 
     <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+   	<link rel="apple-touch-startup-image" href="http://myapprenticeapp.com/img/Default.png" />
 
-    <link rel="apple-touch-startup-image" href="img/startup.png">
   </head>
   <body>
   <div data-role="page" data-theme="e" id="page1" >
@@ -24,10 +24,10 @@
               <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
           </div>
           <h5>
-              Login/Register
+              My Apprentice
           </h5>
       </div>
-      
+
       <div data-role="content" style="padding: 15%">
         <form action="<?php echo site_url() . '/user/login' ?>" method="POST" data-ajax="false">
           <div data-role="fieldcontain">

@@ -27,7 +27,6 @@ class Shared extends CI_Controller {
 		$this->load->view( 'footer' );
 	}
 
-	//Look over this function to see if it belongs in this controller later
 	public function book( $stu_id, $hr_id ) {
 		$this->Shared_model->bookTimeslot( $stu_id, $hr_id );	
 		$this->load->view( 'success/success_book' );
@@ -46,10 +45,10 @@ class Shared extends CI_Controller {
 	}
 
 	public function getTimeslots( $ins_id = NULL, $reschedule = FALSE ) {
-		$this->load->view( 'header', $data );
+		$this->load->view( 'header' );
 		if( $this->user_type == 'instructor' ) {
 			$query = $this->Shared_model->fetchTimeslots( $this->user_id );
-			$data[ 'query' ] = $query->result_array();
+			$data[ 'query' ] = $query;
 			if( !$reschedule ) {
 				$this->load->view( 'instructor/instructor_view_timeslots', $data );
 			}
@@ -61,7 +60,7 @@ class Shared extends CI_Controller {
 		}
 		else {
 			$query = $this->Shared_model->fetchTimeslots( $ins_id );
-			$data[ 'query' ] = $query->result_array();
+			$data[ 'query' ] = $query;
 			if( !$reschedule ) {
 				$this->load->view( 'student/student_view_timeslots', $data );
 			}
