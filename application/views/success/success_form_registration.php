@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div data-role="content" align="center">
-			You have been sucessfully registered!
+			<strong>You have been sucessfully registered<strong>
 			<a data-role='button' href=<?php echo site_url() . "/user/index/login_home"?> data-transition="fade">Log in here!</a>
 		</div>
 	</div>

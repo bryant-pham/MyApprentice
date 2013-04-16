@@ -73,7 +73,8 @@ class Instructor_model extends CI_Model {
 							FROM student, requests, users
 							WHERE student.stu_id = requests.stu_id
 							AND student.user_id = users.id
-							AND approved = 0' );
+							AND approved = 0
+							AND ins_id = ' . $this->user_id );
 		return $query;
 	}
 

@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div data-role="content" align="center">
-			Successfully Rescheduled!
+			<strong>Successfully Rescheduled<strong>
 			<a href=<?php echo site_url() . '/' . $this->session->userdata('user_type') . '/viewBooks' ?> data-role="button" data-theme="e">OK</a>
 		</div>
 	</body>

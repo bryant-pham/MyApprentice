@@ -5,10 +5,18 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="true"/>
   <title>MyApp-rentice</title>
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>  
+  <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+  <link rel="stylesheet" href="http://myapprenticeapp.com/overwrite.css" />
+
+  <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
+  <link rel="apple-touch-startup-image" href="http://myapprenticeapp.com/img/Default.png" />
 </head>
 <body>
   <div data-role="page" data-theme="e">
@@ -49,7 +57,7 @@
           </div>
           <div data-role="fieldcontain">
               <label for="selectmenu1">
-                  Register as
+                  Register as<br>
               </label>
               <select name="user_type">
                   <option value="instructor">

@@ -1,9 +1,9 @@
 		    <h3>View Timeslots</h3>
  		 </div>
 		<div data-role="content">
-			<ul data-role="listview">
+			<ul data-role="listview" data-divider-theme="a">
 				<?php foreach( $query as $date => $data ): ?>
-				<li data-role="list-divider" data-theme="a"><?php echo $date ?></li>
+				<li data-role="list-divider"><?php echo $date ?></li>
 					<?php foreach( $data as $row ):?>
 					<li><?php
 						  $book_link = site_url() . "/shared/book/" . $this->session->userdata( 'user_id' ) . "/" .$row[ 'hr_id' ]; 

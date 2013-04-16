@@ -1,9 +1,9 @@
 	    <h3>Appointments</h3>
   	</div>
 	<div data-role="content">
-		<ul data-role="listview">
+		<ul data-role="listview" data-divider-theme="a">
 			<?php foreach( $query as $date => $data ): ?>
-			<li data-role="list-divider" data-theme="a"><?php echo $date ?></li>
+			<li data-role="list-divider"><?php echo $date ?></li>
 				<?php foreach( $data as $row ):?>
 				<li><?php 
 					  $unbook_link = site_url() . "/shared/unbook/" . $row[ 'hr_id' ];
@@ -11,7 +11,7 @@
 					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
 					  echo "<p>"  . $row[ 'start_time' ] . " - " . $row[ 'end_time' ] . "<p>";
 					  echo "<p>"  . $row[ 'email' ] . "<p>";
-					  echo "<p>"  . $row[ 'phone' ] . "<p>";
+					  echo "<p>"  . "<a href='tel:+" . $row[ 'phone' ] . "'>" . $row[ 'phone' ] . "</a>" . "<p>";
 					?>
 					<form action=<?php echo $reschedule_link; ?> method="POST">
 						<input type="hidden" name="old_hr_id" value=<?php echo $row['hr_id'] ?>>
