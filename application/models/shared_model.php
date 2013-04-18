@@ -25,14 +25,15 @@ class Shared_model extends CI_Model {
 	}
 
 	public function fetchTimeslots( $ins_id ) {
-		$query = $this->db->query( 'SELECT hr_id, DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%H:%i") "start_time", TIME_FORMAT(end_time, "%H:%i") "end_time"
+		$query = $this->db->query( 'SELECT hr_id, DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%h:%i %p") "start_time", TIME_FORMAT(end_time, "%h:%i %p") "end_time",
+									dayname( schedule_date ) "day_name", monthname( schedule_date ) "month_name", day( schedule_date ) "day", year( schedule_date ) "year"
 									FROM hours
 									WHERE ins_id = ' . $ins_id .
 								  ' AND booked = "false"
 								    ORDER BY schedule_date ASC' );
 		$sorted_dict = array();
 		foreach( $query->result_array() as $row ) {
-			$schedule_date = $row[ 'schedule_date' ];
+			$schedule_date = $row[ 'day_name' ] . ', ' . $row[ 'month_name' ] . ' ' . $row[ 'day' ] . ', ' . $row[ 'year' ];
 			if( array_key_exists( $schedule_date, $sorted_dict ) ){
 				array_push( $sorted_dict[$schedule_date], $row );
 			}

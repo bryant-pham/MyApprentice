@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
   <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
-  <link rel="stylesheet" href="http://myapprenticeapp.com/overwrite.css" />
+  <link rel="stylesheet" href=<?php echo base_url() . "/overwrite.css"?> />
 
   <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />

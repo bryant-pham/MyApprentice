@@ -2,16 +2,15 @@
  		 </div>
 		<div data-role="content">
 			<?php if( !( empty( $query ) ) ) {?>
-			<ul data-role="listview" data-divider-theme="a">
+			<ul data-role="listview" data-divider-theme="d">
 				<?php foreach( $query as $date => $data ): ?>
-				<li data-role="list-divider"><?php echo $date ?></li>
+				<li data-role="list-divider"><div class="list-divider"><?php echo $date ?></div></li>
 					<?php foreach( $data as $row ):?>
 					<li><?php
 						  $book_link = site_url() . "/shared/book/" . $this->session->userdata( 'user_id' ) . "/" .$row[ 'hr_id' ]; 
-						  echo "<h1>"  . $row[ 'start_time' ] . " - " . $row[ 'end_time' ] . "<h1>";
-						  echo "</a>";
+						  echo "<p class='timeslot-time'>"  . $row[ 'start_time' ] . " - " . $row[ 'end_time' ] . "<p>";
 						?>
-						<a data-role="button" data-theme="e" data-rel="dialog" href=<?php echo $book_link; ?>>Book</a>
+						<a data-role="button" data-theme="e" data-rel="dialog" href=<?php echo $book_link; ?> class="timeslot-button">Book</a>
 					</li>
 					<?php endforeach; ?>
 				<?php endforeach; ?>
