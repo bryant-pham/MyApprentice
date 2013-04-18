@@ -69,4 +69,20 @@ class Instructor extends CI_Controller {
 			$this->load->view( 'success/success_approve' );
 		}
 	}
+
+	public function instrumentPage() {
+		$query = $this->Instructor_model->fetchInstruments( $this->user_id );
+		$data[ 'query' ] = $query->result_array();
+		$this->load->view( 'header' );
+		$this->load->view( 'instructor/form_instrument', $data );
+		$this->load->view( 'footer' );
+	}
+
+	public function addInstruments() {
+		if( $this->Instructor_model->insertInstruments( $this->user_id ) ) {
+			$this->load->view( 'header' );
+			$this->load->view( 'success/success_form_personal' );
+			$this->load->view( 'footer' );
+		}
+	}
 }

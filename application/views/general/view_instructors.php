@@ -33,7 +33,7 @@
 					  echo "<a href=" . $link . " data-rel='dialog'>"; 
 					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
 					  echo "<p>"  . $row[ 'address' ] . "<p>";
-					  echo "<p>"  . "<a href='tel:+" . $row[ 'phone' ] . "'>" . $row[ 'phone' ] . "</a>" . "<p>";
+					  echo "<p>"  . $row[ 'phone' ] . "<p>";
 					  echo "<p>"  . $row[ 'email' ] . "<p>";
 					  echo "</a>";
 					?>

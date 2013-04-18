@@ -7,7 +7,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="HandheldFriendly" content="true"/>
 
-  	<title>MyApprentice</title>
+  	<title>My Apprentice</title>
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -36,12 +36,12 @@
 					<input type="text" name="zip_code">
 					<label for="instrument">Instrument:</label>
 				    <select name="instrument" id="select_instrument">
-				        <option value="drums">Drums</option>
-				        <option value="piano">Piano</option>
-				        <option value="guitar">Guitar</option>
-				        <option value="voice">Voice</option>
-				        <option value="harmonica">Harmonica</option>
-				        <option value="saxaphone">Saxaphone</option>
+				        <option value="Drums">Drums</option>
+				        <option value="Piano">Piano</option>
+				        <option value="Guitar">Guitar</option>
+				        <option value="Voice">Voice</option>
+				        <option value="Violin">Violin</option>
+				        <option value="Saxaphone">Saxaphone</option>
 				    </select>
 				    <label for="location">Location:</label>
 				    <select name="location" id="select_location">

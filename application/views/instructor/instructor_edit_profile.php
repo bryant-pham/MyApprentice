@@ -7,7 +7,7 @@
       <a id="edit_info" data-role="button" data-theme="e" href=<?php echo site_url() . "/shared/index/form_personal"?>>
         Edit Personal Information
       </a>
-      <a id="manage_instruments" data-role="button" data-theme="e" href=<?php echo site_url() . ""?>>
-        Add/Delete Instruments
+      <a id="manage_instruments" data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/instrumentPage"?>>
+        Add Instruments
       </a>
     </div>

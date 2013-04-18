@@ -59,7 +59,7 @@ class Instructor_model extends CI_Model {
 		foreach( $query->result_array() as $row ) {
 			$schedule_date = $row[ 'schedule_date' ];
 			if( array_key_exists( $schedule_date, $sorted_dict ) ){
-				array_push( $sorted_dict[$schedule_date], $row );
+				array_push( $sorted_dict[ $schedule_date ], $row );
 			}
 			else{
 				$sorted_dict[ $schedule_date ] = array( $row );
@@ -88,5 +88,27 @@ class Instructor_model extends CI_Model {
 			return TRUE;
 		}
 		return FALSE;
+	}
+
+	public function insertInstruments( $ins_id ) {
+		$data = array();
+		for( $x = 1; $x < 4; $x++ ) {
+			if( $_POST[ 'instrument' . $x ] ) {
+				$row = array(  
+					'ins_id'     => $ins_id,
+					'instrument' => $_POST[ 'instrument' . $x ]
+				);
+				array_push( $data, $row );
+			}
+		}
+		if( $this->db->insert_batch( 'instrument', $data ) ) {
+			return TRUE;
+		}
+		return FALSE;
+	}
+
+	public function fetchInstruments( $ins_id ) {
+		$query = $this->db->get_where( 'instrument', array( 'ins_id' => $ins_id ) );
+		return $query;
 	}
 }
