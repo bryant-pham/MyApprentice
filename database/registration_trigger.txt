@@ -1,0 +1,11 @@
+DELIMITER //
+CREATE TRIGGER registration_trigger AFTER INSERT
+ON users
+FOR EACH ROW BEGIN
+	IF new.user_type = 'instructor' then
+    	INSERT INTO instructor (user_id) VALUES (new.id);
+    ELSE 
+    	INSERT INTO student (user_id) VALUES (new.id);
+    END IF;
+END//
+DELIMITER ;

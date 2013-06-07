@@ -5,8 +5,6 @@ class User extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model( 'User_model' );
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
 	}
 
 	public function index( $page = NULL ) {
@@ -20,12 +18,10 @@ class User extends CI_Controller {
 		$result = $this->User_model->validate();
 		if( $result ) {
 			if( $this->session->userdata( 'user_type' ) == 'instructor' ) {
-				$this->load->view( 'instructor/instructor_home' );
-				$this->load->view( 'footer' );
+				redirect( site_url() . '/instructor' );
 			}
 			else {
-				$this->load->view( 'student/student_home' );
-				$this->load->view( 'footer' );
+				redirect( site_url() . '/student' );
 			}
 		}
 		else $this->index();

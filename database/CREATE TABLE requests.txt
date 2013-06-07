@@ -1,0 +1,9 @@
+CREATE TABLE requests 
+(
+	ins_id 	INT,
+	stu_id	INT,
+	approved BOOLEAN,
+	PRIMARY KEY (ins_id, stu_id),
+	CONSTRAINT fk_rq_stu_id FOREIGN KEY (stu_id) REFERENCES student (stu_id),
+	CONSTRAINT fk_rq_ins_id FOREIGN KEY (ins_id) REFERENCES instructor (ins_id)
+)ENGINE=InnoDB;

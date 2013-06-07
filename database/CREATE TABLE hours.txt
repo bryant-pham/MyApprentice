@@ -1,0 +1,9 @@
+CREATE TABLE hours
+(
+	hr_id 			INT PRIMARY KEY AUTO_INCREMENT,
+	schedule_date	DATE NOT NULL,
+	start_time		TIME NOT NULL,
+	end_time		TIME NOT NULL,
+	ins_id          INT NOT NULL,
+	CONSTRAINT fk_ins_id FOREIGN KEY (ins_id) REFERENCES instructor (ins_id)
+) ENGINE=InnoDB;

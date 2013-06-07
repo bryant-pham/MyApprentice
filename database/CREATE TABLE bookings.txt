@@ -1,0 +1,8 @@
+CREATE TABLE bookings
+(
+	stu_id 	INT
+	hr_id	INT
+	PRIMARY KEY (stu_id, hr_id)
+	CONSTRAINT fk_stu_id FOREIGN KEY (stu_id) REFEREENCES student (stu_id),
+	CONSTRAINT fk_hr_id FOREIGN KEY (hr_id) REFEREENCES hours (hr_id)
+)ENGINE=InnoDB;

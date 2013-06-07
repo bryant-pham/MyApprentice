@@ -50,7 +50,7 @@ class Instructor_model extends CI_Model {
 									hours.hr_id, instructor.ins_id, dayname( schedule_date ) "day_name", monthname( schedule_date ) "month_name", day( schedule_date ) "day", year( schedule_date ) "year"
 									FROM instructor, hours, bookings, student, users
 									WHERE instructor.ins_id = hours.ins_id
-									AND instructor.user_id = users.id
+									AND student.user_id = users.id
 									AND hours.hr_id = bookings.hr_id
 									AND bookings.stu_id = student.stu_id
 									AND instructor.ins_id = ' . $ins_id .
@@ -68,6 +68,30 @@ class Instructor_model extends CI_Model {
 		return $sorted_dict;
 	}
 
+	public function fetchDailyBooks( $ins_id ) {
+		$query = $this->db->query( 'SELECT student.stu_id, student.f_name, student.l_name, users.email, mask(student.phone, "(###) ###-####") "phone", 
+									DATE_FORMAT(schedule_date, "%m/%d/%Y") "schedule_date", TIME_FORMAT(start_time, "%h:%i %p") "start_time", TIME_FORMAT(end_time, "%h:%i %p") "end_time", 
+									hours.hr_id, instructor.ins_id, dayname( schedule_date ) "day_name", monthname( schedule_date ) "month_name", day( schedule_date ) "day", year( schedule_date ) "year"
+									FROM instructor, hours, bookings, student, users
+									WHERE instructor.ins_id = hours.ins_id
+									AND student.user_id = users.id
+									AND hours.hr_id = bookings.hr_id
+									AND bookings.stu_id = student.stu_id
+									AND instructor.ins_id = ' . $ins_id .
+								  ' AND schedule_date = current_date()
+								  	ORDER BY schedule_date ASC' );
+		$sorted_dict = array();
+		foreach( $query->result_array() as $row ) {
+			$schedule_date = $row[ 'day_name' ] . ', ' . $row[ 'month_name' ] . ' ' . $row[ 'day' ] . ', ' . $row[ 'year' ];
+			if( array_key_exists( $schedule_date, $sorted_dict ) ){
+				array_push( $sorted_dict[ $schedule_date ], $row );
+			}
+			else{
+				$sorted_dict[ $schedule_date ] = array( $row );
+			}
+		}
+		return $sorted_dict;
+	}
 	public function fetchRequests( $ins_id ) {
 		$query = $this->db->query( 'SELECT f_name, l_name, users.email, mask(phone, "(###)###-####") "phone", address, student.stu_id
 							FROM student, requests, users

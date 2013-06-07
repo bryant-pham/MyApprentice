@@ -22,7 +22,7 @@
 		<div data-role="content" align="center">
 			<strong>You have successfully applied<br><strong>
 			The instructor will approve you and allow you to book lessons soon
-			<a href="#" data-role="button" data-rel="back" data-theme="e">OK</a>
+			<a href=<?php echo site_url() . "/" . $this->session->userdata('user_type') ?> data-role="button" data-theme="e">OK</a>
 		</div>
 	</body>
 </html>

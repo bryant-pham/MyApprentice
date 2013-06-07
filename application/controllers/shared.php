@@ -10,8 +10,6 @@ class Shared extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model( 'Shared_model' );
-		$this->load->helper( array('form', 'url' ) );
-		$this->load->library( 'form_validation' );
 
 		if( !$this->session->userdata( 'validated' ) ) {
 			header( "Location: " . site_url() . "/user/index/login_home" );
@@ -24,6 +22,7 @@ class Shared extends CI_Controller {
 	public function index( $page ) {
 		$this->load->view( 'header' );
 		$this->load->view( $page  );
+		$this->load->view( $this->user_type . '/' . $this->user_type . '_side_panel' );
 		$this->load->view( 'footer' );
 	}
 
@@ -51,11 +50,13 @@ class Shared extends CI_Controller {
 			$data[ 'query' ] = $query;
 			if( !$reschedule ) {
 				$this->load->view( 'instructor/instructor_view_timeslots', $data );
+				$this->load->view( $this->user_type . '/' . $this->user_type . '_side_panel' );
 			}
 			else {
 				$data[ 'old_hr_id' ] = $_POST[ 'old_hr_id' ];
 				$data[ 'stu_id' ] = $_POST[ 'stu_id' ];
 				$this->load->view( 'reschedule_view_timeslots', $data );
+				$this->load->view( $this->user_type . '/' . $this->user_type . '_side_panel' );
 			}
 		}
 		else {
@@ -63,11 +64,13 @@ class Shared extends CI_Controller {
 			$data[ 'query' ] = $query;
 			if( !$reschedule ) {
 				$this->load->view( 'student/student_view_timeslots', $data );
+				$this->load->view( $this->user_type . '/' . $this->user_type . '_side_panel' );
 			}
 			else {
 				$data[ 'stu_id' ] = $this->user_id;
 				$data[ 'old_hr_id' ] = $_POST[ 'old_hr_id' ];
 				$this->load->view( 'reschedule_view_timeslots', $data );
+				$this->load->view( $this->user_type . '/' . $this->user_type . '_side_panel' );
 			}
 		}
 		$this->load->view( 'footer' );

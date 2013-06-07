@@ -11,8 +11,6 @@ class Instructor extends CI_Controller {
 		parent::__construct();
 		$this->load->model( 'Instructor_model' );
 		$this->load->model( 'Shared_model' );
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
 
 		if( !$this->session->userdata('validated') ) {
 			header( "Location: " . site_url() . "/user/index/login_home" );
@@ -26,13 +24,21 @@ class Instructor extends CI_Controller {
 			$data[ 'heading' ] = (string) $page;
 			$this->load->view( 'header' );
 			$this->load->view( 'instructor/' . $page  );
+			$this->load->view( 'instructor/instructor_side_panel' );
 			$this->load->view( 'footer' );
 		}
 		else {
-			$this->load->view( 'instructor/instructor_home' );
-			$this->load->view( 'footer' );
+			$this->home();
 		}
 	} 
+
+	public function home() {
+		$query = $this->Instructor_model->fetchDailyBooks( $this->user_id );
+		$data[ 'query' ] = $query;
+		$this->load->view( 'instructor/instructor_home', $data );
+		$this->load->view( 'instructor/instructor_side_panel' );
+		$this->load->view( 'footer' );
+	}
 
 	public function postTimeslots() {
 		if( $this->Instructor_model->setTimeslots() ) {
@@ -47,6 +53,7 @@ class Instructor extends CI_Controller {
 		$data[ 'query' ] = $query;
 		$this->load->view( 'header' );
 		$this->load->view( 'view_books', $data );
+		$this->load->view( 'instructor/instructor_side_panel' );
 		$this->load->view( 'footer' );
 	}
 
@@ -61,6 +68,7 @@ class Instructor extends CI_Controller {
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'header' );
 		$this->load->view( 'instructor/instructor_view_requests', $data );
+		$this->load->view( 'instructor/instructor_side_panel' );
 		$this->load->view( 'footer' );
 	}
 
@@ -75,6 +83,7 @@ class Instructor extends CI_Controller {
 		$data[ 'query' ] = $query->result_array();
 		$this->load->view( 'header' );
 		$this->load->view( 'instructor/form_instrument', $data );
+		$this->load->view( 'instructor/instructor_side_panel' );
 		$this->load->view( 'footer' );
 	}
 

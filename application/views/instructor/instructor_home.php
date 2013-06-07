@@ -4,6 +4,7 @@
         <title>My Apprentice</title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src=<?php echo base_url() . "/assets/js/swipe.js" ?>></script>
         <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
 
         <meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
@@ -16,42 +17,39 @@
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.mode.calbox.js"></script>
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/1.1.0/jqm-datebox-1.1.0.mode.datebox.js"></script>
         <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
-       	<link rel="stylesheet" href=<?php echo base_url() . "/overwrite.css"?> />
+       	
+        <link rel="stylesheet" href=<?php echo base_url() . "/overwrite.css"?> />
 
         <link rel="apple-touch-icon" href="http://myapprenticeapp.com/img/apple-touch-icon.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad.png" />
         <link rel="apple-touch-icon" sizes="114x114" href="http://myapprenticeapp.com/img/apple-touch-icon-iphone.png" />
         <link rel="apple-touch-icon" sizes="144x144" href="http://myapprenticeapp.com/img/apple-touch-icon-ipad2.png" />
         <link rel="apple-touch-startup-image" href="http://myapprenticeapp.com/img/Default.png" />
-
     </head>
 
 	<body>
 		<div data-theme="a" data-role="header">
-            <div style=" text-align:center">
-                <img style="width: 70px; height: 70px" src="http://assets.codiqa.com/cpeP4jWRgGSUWEmKlXaQ_logo3.jpg">
-            </div>
-            <a data-role="button" href=<?php echo site_url() . "/user/logout"?> class="ui-btn-right">
-                Logout
-            </a>
+            <a data-role="button" href=<?php echo site_url() . "/user/logout"?> class="ui-btn-right">Logout</a>
+            <a data-role="button" href="#side_panel" class="ui-btn-left">Menu</a>
 	        <h3>
 	            Instructor Main
 	        </h3>
 	  	</div>
-        <div data-role="content">
-            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_edit_profile"?>>
-                Edit Profile
-            </a>
-            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/index/instructor_post_timeslots"?>>
-                Post Hours
-            </a>
-            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/viewRequests"?>>
-                View Student Requests
-            </a>
-            <a data-role="button" data-theme="e" href="<?php echo site_url() . "/shared/getTimeslots/"?>">
-                View Your Available Times
-            </a>
-            <a data-role="button" data-theme="e" href=<?php echo site_url() . "/instructor/viewBooks"?>>
-                View Appointments
-            </a>
+        <div data-role="content" id="content" class="content">
+            <h3 align="center">Today's Appointments:</h3>
+            <?php if( !( empty( $query ) ) ) {?>
+            <ul data-role="listview" data-divider-theme="d">
+                <?php foreach( $query as $date => $data ): ?>
+                    <?php foreach( $data as $row ):?>
+                    <li class="book-list"><?php 
+                          echo "<h1 class='book-name'>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
+                          echo "<p class='book-time'>"  . $row[ 'start_time' ] . " - " . $row[ 'end_time' ] . "<p>";
+                          echo "<p class='book-email'>"  . $row[ 'email' ] . "<p>";
+                          echo "<p class='book-phone'>"  . "<a href='tel:+" . $row[ 'phone' ] . "'>" . $row[ 'phone' ] . "</a>" . "<p>";
+                        ?>             
+                    </li>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </ul>
+            <?php } else echo "<h3 align='center'>No Appointments</h3>" ?>
         </div>

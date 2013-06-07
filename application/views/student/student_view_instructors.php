@@ -8,10 +8,10 @@
 					  $ins_id = (string) $row[ 'ins_id' ];
 					  $link = site_url() . "/shared/getTimeslots/" . $ins_id;
 					  echo "<a href=" . $link . ">"; 
-					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
-					  echo "<p>"  . $row[ 'address' ] . "<p>";
-					  echo "<p>"  . "<a href='tel:+" . $row[ 'phone' ] . "'>" . $row[ 'phone' ] . "</a>" . "<p>";
-					  echo "<p>"  . $row[ 'email' ] . "<p>";
+					  echo "<h1 class='book-name'>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
+					  echo "<p class='book-email'>"  . $row[ 'address' ] . "<p>";
+					  echo "<p class='book-email'>"  . $row[ 'email' ] . "<p>";
+					  echo "<p class='list-phone'>"  . "<a href='tel:+" . $row[ 'phone' ] . "'>" . $row[ 'phone' ] . "</a>" . "<p>";
 					  echo "</a>";
 					?>
 				</li>

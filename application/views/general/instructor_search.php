@@ -51,7 +51,7 @@
 				<input type="submit" value="Search">
 			</form>
 			<fieldset data-role="controlgroup">
-					<a data-role="button" href="<?php echo site_url() . '/user'?>">OR Log in/Register here</a>
+					<a data-role="button" href="<?php echo site_url() . '/user'?>">Log in/Register here</a>
 			</fieldset>
 		</div>
 	</body>

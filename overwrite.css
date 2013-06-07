@@ -499,55 +499,111 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     font-size: 15pt;
 }
-
-#book-list-button-top .ui-btn {
-    position: relative;
-    width: 35%;
-    left: 10%;
-    top: 10px;
+.book-list {
+    text-align: center;
 }
 
-#book-list-button-bottom .ui-btn {
-    position: relative;
-    width: 35%;
-    left: 55%;
-    bottom: 30px;
+.book-name {
+    font-size: 125%;
 }
 
-#book-date-time {
-    position: relative;
-    font-size: 110%;
+.book-time {
     font-weight: bold;
-    left: 55%;
-    bottom: 22px;
+    font-size: 85%;
 }
 
-#book-name {
-    font-size: 120%;
+.buttons {
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
-#book-email {
-    position: relative;
-    font-size: 95%;
-    bottom: 22px;
-}
-
-#book-phone {
-    position: relative;
-    font-size: 80%;
-    bottom: 18px;
+.list-phone {
+    position: relative !important;
+    left: 2% !important;
 }
 
 .timeslot-button {
-    position: relative;
-    width: 35%;
-    left: 60%;
-    bottom: 5px;
+    position: relative !important;
+    width: 35% !important;
+    left: 57% !important;
+    bottom: 5px !important;
 }
 
 .timeslot-time {
-    position: relative;
-    font-size: 120%;
-    font-weight: bold;
-    top: 40px;
+    position: relative !important;
+    font-size: 120% !important;
+    font-weight: bold !important;
+    top: 40px !important;
 }
+
+.name2 {
+    font-size: 150% !important;
+}
+
+.address2 {
+    position: relative !important;
+    font-size: 100% !important;
+    bottom: 1% !important;
+}
+
+.email2 {
+    position: relative !important;
+    font-size: 100% !important;
+    bottom: 1% !important;
+}
+ .phone2 {
+    position: relative !important;
+    font-size: 100% !important;
+    bottom: 1% !important;
+ }
+
+form {
+    height: 100%;
+    width: 100%;
+    bottom: 100%;
+}
+
+li {
+    height: 100%;
+    width: 100%;
+    bottom: 100%;
+    top: 100%;
+} 
+
+#side_panel {
+  width: 165px;
+  height: 100%;
+  display: block !important;
+  float: left;
+}
+
+.menulist {
+    background-color: #383737;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1e1d1d), color-stop(21%, #383737));
+}
+
+#side_panel ul {
+    margin: 0;
+    padding: 0;
+    width: inherit;
+}
+
+#side_panel ul li {
+    list-style-type: none;
+    margin: 0px 0;
+}
+
+#side_panel ul li a:link, #side_panel ul li a:visited {
+  border-bottom: solid #333 1px;
+  box-shadow: 0 1px 0 #727272;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  width: 130px;
+  display: block;
+  padding: 10px 0px 10px 10px;
+  text-shadow: 0px 1px 1px #000000;
+}
+ .content {
+    height: 100%;
+ }

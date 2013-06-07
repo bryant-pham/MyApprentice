@@ -1,0 +1,10 @@
+CREATE TABLE student
+(
+	stu_id	INT PRIMARY KEY AUTO_INCREMENT,
+	f_name 	VARCHAR(50) NOT NULL,
+	l_name 	VARCHAR(50) NOT NULL,
+	phone 	VARCHAR(10) NOT NULL,
+	address	VARCHAR(100) NOT NULL,
+	user_id INT,
+	CONSTRAINT fk_user_stu_id FOREIGN KEY (user_id) REFERENCES users (id)
+) ENGINE=InnoDB;

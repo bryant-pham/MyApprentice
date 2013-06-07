@@ -1,0 +1,7 @@
+CREATE TABLE instrument
+(
+ins_id 		int,
+instrument 	varchar(255),
+PRIMARY KEY (ins_id, instrument),
+CONSTRAINT fk_instrument FOREIGN KEY (ins_id) REFERENCES instructor (ins_id)
+) ENGINE=InnoDB;

@@ -29,13 +29,11 @@
 			<ul data-role="listview" data-split-icon="gear">
 				<?php foreach( $query as $row ):?>
 				<li><?php
-					  $ins_id = (string) $row[ 'ins_id' ];
 					  $link = site_url() . "/general/index/login_prompt";
-					  echo "<a href=" . $link . " data-rel='dialog'>"; 
-					  echo "<h1>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
-					  echo "<p>"  . $row[ 'address' ] . "<p>";
-					  echo "<p>"  . $row[ 'phone' ] . "<p>";
-					  echo "<p>"  . $row[ 'email' ] . "<p>";
+					  echo "<a href=" . $link . ">"; 
+					  echo "<h1 class='book-name'>" . $row[ 'f_name' ] . ' ' . $row[ 'l_name' ] . "</h1>";
+					  echo "<p class='book-email'>"  . $row[ 'email' ] . "<p>";
+					  echo "<p class='list-phone'>"  . "<a href='tel:+" . $row[ 'phone' ] . "'>" . $row[ 'phone' ] . "</a>" . "<p>";
 					  echo "</a>";
 					?>
 				</li>
